@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: #222;
+}
+
+.container {
+    display: flex;
+    width: 60%;
+    height: 80vh;
+    background: #333;
+    border-radius: 10px;
+    overflow: hidden;
+    min-width: 320px; /* Ensures it doesn’t shrink too much */
+    max-width: 90%; /* Ensures it doesn’t grow too large */
+}
+
+/* Poster Grid */
+.poster-grid {
+    display: flex;
+    flex : 1;
+    overflow: hidden; /* supaya poster tidak overflow*/
+}
+
+.poster {
+    flex: 1;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.5);
+    aspect-ratio: 3/4; /* kunci aspek rasio poster */
+}
+
+/* Menggunakan gambar poster dari API OMDB */
+.poster:nth-child(1) { background-image: url('https://via.placeholder.com/150'); }
+.poster:nth-child(2) { background-image: url('https://via.placeholder.com/150'); }
+/* Tambahkan lebih banyak gambar sesuai kebutuhan */
+
+/* Login Box */
+.login-box {
+    flex: 1;
+    background: #444;
+    color: white;
+    padding: 50px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.highlight {
+    color: #f4c10f;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background: #666;
+    color: white;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background: #f4c10f;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+p {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+p a {
+    color: #f4c10f;
+    text-decoration: none;
+    font-weight: bold;
+}

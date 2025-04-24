@@ -1,0 +1,29 @@
+<div class="movie-card">
+    <a href="/movie/<%= movieId %>">
+        <img 
+            src="<%= poster !== 'N/A' ? poster : '/images/default-movie.jpg' %>" 
+            alt="Movie Poster"
+        >
+    </a>
+    <div class="movie-info">
+        <span class="rating">&#9733; <%= rating || 'N/A' %></span>
+        <h3>
+            <a href="/movie/<%= movieId %>"><%= title %></a>
+        </h3>
+        <% if (type == 'home') { %>
+            <% if (user) { %>
+                <form action="/add-favorite" method="POST">
+                    <input type="hidden" name="title" value="<%= title %>">
+                    <input type="hidden" name="poster" value="<%= poster %>">
+                    <input type="hidden" name="rating" value="<%= rating %>">
+                    <input type="hidden" name="movieId" value="<%= movieId %>">
+                    <button type="submit" class="favorites-button">&#x2764; Favorites</button>
+                </form>
+            <% } else { %>
+                <a href="/login" class="favorites-button">&#x2764; Login to Favorite</a>
+            <% } %>
+        <% } %>
+        
+        
+    </div>
+</div>

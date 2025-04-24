@@ -1,0 +1,125 @@
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Sign Up Page */
+#signup {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Background Image */
+.image-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url('https://www.24hourmoviemarathon.com/wp-content/uploads/2014/11/imdb_top_250-825x510.jpg?ed4167&ed4167') no-repeat center center;
+  background-size: cover;
+  opacity: 0.8;
+  z-index: -1;
+  filter: brightness(20%);
+}
+
+
+/* Create Account Box */
+.create-account-box {
+  width: 450px;
+  background-color: rgba(64, 64, 64, 0.9);
+  border-radius: 18px;
+  padding: 40px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+/* Create Account Text */
+.create-account-text {
+  font-weight: 700;
+  font-size: 24px;
+  color: #FFC107;
+  margin-bottom: 20px;
+}
+
+/* Input Fields */
+.input-field {
+  margin-bottom: 15px;
+  position: relative;
+  margin-bottom:30px;
+}
+
+.input-field input {
+  width: 100%;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 10px;
+  padding-left: 15px;
+  font-size: 16px;
+  color: #ffffff;
+  outline: none;
+}
+
+.input-field input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Button */
+.log-in-button button {
+  width: 100%;
+  height: 45px;
+  background: linear-gradient(90deg, #FFBF00, #FFC107);
+  border-radius: 25px;
+  font-size: 18px;
+  color: #FFFFFF;
+  cursor: pointer;
+  border: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.log-in-button button:hover {
+  background: linear-gradient(90deg, #FFC107, #FFBF00);
+}
+
+/* Sign In Text */
+.have-account-text {
+  font-size: 14px;
+  color: #FFC107;
+  margin-top: 15px;
+}
+
+.have-account-text a {
+  color: #FFC107;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Top Bar */
+.top-bar {
+  position: fixed;
+  width: 100%;
+  height: 70px;
+  background: #1E1E1E;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+/* SearchMovies Text */
+.search-movies {
+  font-weight: 700;
+  font-size: 28px;
+  color: #FFFFFF;
+}
+
+.search-movies span {
+  color: #FFC107;
+}

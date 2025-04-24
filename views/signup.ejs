@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="/css/signup.css">
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="search-movies">SearchMovies.</div>
+  </div>
+
+  <!-- Sign Up Section -->
+  <div id="signup">
+    <div class="image-background"></div>
+
+    <div class="create-account-box">
+      <div class="create-account-text">Create Account</div>
+      <% if(error != null && error != "" ) { %>
+        <p style="color: red; margin-bottom: 15px;"><%= error %></p>
+      <% } %>
+      <!-- Form untuk signup -->
+      <form action="/signup" method="POST">
+        <div class="input-field">
+          <input type="text" name="username" id="username" placeholder="Username" required />
+        </div>
+
+        <div class="input-field">
+          <input type="password" name="password" id="password" placeholder="Password" required />
+        </div>
+
+        <div class="input-field">
+          <input type="password" name="confirmPassword" id="confirm-password" placeholder="Confirm Password" required />
+        </div>
+
+        <div class="log-in-button">
+          <button type="submit">Sign Up</button>
+        </div>
+      </form>
+
+      <div class="have-account-text">
+        Already have an account? <a href="/login">Sign In Here!</a>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

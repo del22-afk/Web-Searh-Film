@@ -1,0 +1,302 @@
+/* Reset Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #000;
+  color: #fff;
+}
+
+main {
+  padding: 20px 30px; /* Beri jarak dari tepi */
+}
+
+/* Admin Dashboard */
+.admin-dashboard {
+  padding: 30px;
+}
+
+.admin-dashboard h1 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 40px;
+}
+
+/* User List Section */
+.user-list h2 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.user-list table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.user-list th, .user-list td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #444;
+}
+
+.user-list th {
+  background-color: #222;
+  color: #FFC107;
+  font-size: 16px;
+}
+
+.user-list td {
+  background-color: #333;
+  color: #fff;
+  font-size: 14px;
+}
+
+.user-list tr:hover {
+  background-color: #444;
+}
+
+.user-list button {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 7px 15px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.user-list button:hover {
+  background-color: #c0392b;
+}
+
+.user-list i {
+  margin-right: 5px;
+}
+
+/* Comment List Section */
+.comment-list h2 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.comment-list table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.comment-list th, .comment-list td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #444;
+}
+
+.comment-list th {
+  background-color: #222;
+  color: #FFC107;
+  font-size: 16px;
+}
+
+.comment-list td {
+  background-color: #333;
+  color: #fff;
+  font-size: 14px;
+}
+
+.comment-list tr:hover {
+  background-color: #444;
+}
+
+.comment-list button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 7px 15px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.comment-list button:hover {
+  background-color: #2980b9;
+}
+
+.comment-list i {
+  margin-right: 5px;
+}
+
+/* General Button Styling */
+button {
+  display: flex;
+  align-items: center; /* Menyelaraskan ikon dan teks */
+  padding: 10px 20px;
+  background-color: #222;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #FFC107;
+}
+
+button i {
+  margin-right: 8px; /* Memberi jarak antara ikon dan teks */
+}
+
+/* Tabel Komentar dan User */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th, .table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #444;
+}
+
+.table th {
+  background-color: #222;
+  color: #FFC107;
+  font-size: 16px;
+}
+
+.table td {
+  background-color: #333;
+  color: #fff;
+  font-size: 14px;
+}
+
+.table tr:hover {
+  background-color: #444;
+}
+
+.table button {
+  background-color: #222;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.table button:hover {
+  background-color: #FFC107;
+}
+
+.table i {
+  margin-right: 5px;
+}
+
+/* Tabel Styling: User List and Comments */
+.user-table, .comment-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.user-table th, .comment-table th, .user-table td, .comment-table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #444;
+}
+
+.user-table th, .comment-table th {
+  background-color: #222;
+  color: #FFC107;
+  font-size: 16px;
+}
+
+.user-table td, .comment-table td {
+  background-color: #333;
+  color: #fff;
+  font-size: 14px;
+}
+
+.user-table tr:hover, .comment-table tr:hover {
+  background-color: #444;
+}
+
+.user-table button, .comment-table button {
+  background-color: #222;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.user-table button:hover, .comment-table button:hover {
+  background-color: #FFC107;
+}
+
+
+/* Rating List Section */
+.rating-list h2 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  margin-top: 40px;
+  margin-bottom: 15px;
+}
+
+.rating-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.rating-table th, .rating-table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #444;
+}
+
+.rating-table th {
+  background-color: #222;
+  color: #FFC107;
+  font-size: 16px;
+}
+
+.rating-table td {
+  background-color: #333;
+  color: #fff;
+  font-size: 14px;
+}
+
+.rating-table tr:hover {
+  background-color: #444;
+}
+
+.rating-table button {
+  background-color: #444;
+  color: white;
+  border: none;
+  padding: 7px 15px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.rating-table button:hover {
+  background-color: #FFC107;
+}
+
+.rating-table i {
+  margin-right: 5px;
+}

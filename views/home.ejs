@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SearchMovies - Home</title>
+    <link rel="stylesheet" href="/css/home.css">
+    <script src="/js/search.js"></script>
+</head>
+<body>
+    <%- include('components/navbar') %>
+    <main>
+        <%- include('components/headerTitle') %>
+        <div class="genre-filter">
+            <form action="/genre" method="GET">
+                <select name="genre" onchange="this.form.submit()">
+                    <option value="">Filter by Genre</option>
+                    <option value="Action">Action</option>
+                    <option value="Comedy">Comedy</option>
+                    <option value="Drama">Drama</option>
+                    <option value="Horror">Horror</option>
+                    <option value="Sci-Fi">Sci-Fi</option>
+                </select>
+            </form>
+        </div>
+        <div class="movie-grid">
+            <% if (movies.length > 0) { %>
+                <% movies.forEach(movie => { %>
+                    <% var movieData = { 
+                        title: movie.Title, 
+                        rating: movie.imdbRating, 
+                        movieId: movie.imdbID, 
+                        poster: movie.Poster,
+                        type: 'home',
+                        user: user
+                    }; %>
+            
+                    <div class="movie-wrapper">
+                        <%- include('components/movieCard', movieData) %>
+            
+                        <% if (user) { %>
+                            <!-- Form untuk menambah/menghapus film dari favorit -->
+                            <form action="/add-favorite" method="POST">
+                                <input type="hidden" name="movieId" value="<%= movie.imdbID %>">
+                                <input type="hidden" name="title" value="<%= movie.Title %>">
+                                <input type="hidden" name="poster" value="<%= movie.Poster %>">
+                                <input type="hidden" name="rating" value="<%= movie.imdbRating %>">
+                            </form>
+                        <% } %>
+                    </div>
+                <% }) %>
+            <% } else { %>
+                <p>No movies found.</p>
+            <% } %>
+        </div>
+    </main>
+</body>
+</html>

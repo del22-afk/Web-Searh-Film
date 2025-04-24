@@ -1,0 +1,28 @@
+<head>
+    <link rel="stylesheet" href="/css/navbar.css">
+</head>
+<header class="top-bar">
+    <nav>
+        <p class="logo">
+            <a href="/" class="logo">Search<span>Movies.</span></a>
+        </p>
+        <div class="middle-container">
+            <form action="../search" method="GET">
+                <input type="text" name="query" class="search-bar" placeholder="Search" required>
+            </form>    
+        </div> 
+
+        <div class="right-container">
+            <a href="favorites" class="favorites">&#x2764; Favorites</a>
+            <span class="divider"></span>
+            <div class="login-container">
+                <span class="user-icon">&#x1F464;</span>
+                <% if(user != null && user != ""){ %>
+                    <a href="../profile" class="profile"><%= user.username %></a>
+                <% } else {%>
+                    <a href="../login" class="login">Login</a>
+                <% } %>
+            </div>
+        </div>
+    </nav>
+</header>

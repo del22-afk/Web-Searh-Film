@@ -1,0 +1,121 @@
+/* Top Bar */
+.top-bar {
+    width: 100%;
+    /* display: flex;
+    align-items: center;
+    justify-content: space-between; */
+    background: #1E1E1E;
+    padding: 17px 30px;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    /* Beri jarak antar elemen */
+    justify-content: space-between;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 8px 15px;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+nav a:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+/*LOGO*/
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.logo span {
+    color: #FFC107;
+}
+
+/*SEARCH SECTION*/
+.middle-container {
+    width: 50%;
+}
+
+.search-bar {
+    width: 100%;
+    /* Lebarkan ukuran */
+    /* max-width: 600px;  Batasi agar tidak terlalu besar */
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 25px;
+    border: none;
+    outline: none;
+    /* margin-left: -160px; */
+}
+
+.search-bar::placeholder {
+    font-size: 0.8rem;
+}
+
+/*RIGTH SECTION*/
+
+.right-container {
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+nav a.favorites {
+    background: rgba(255, 193, 7, 0.2);
+    color: #FFC107;
+    font-weight: bold;
+    border-radius: 20px;
+    font-size: 14px;
+    display: flex;
+    padding: 10px 20px; /* Add padding to make the link more clickable */
+    align-items: center; /* Center the text vertically */
+    justify-content: center; /* Center the text horizontally */
+    transition: background 0.3s ease, color 0.3s ease; /* Smooth transition for hover effect */
+  }
+  
+  /* Hover effect */
+  nav a.favorites:hover {
+    background: #FFC107; /* Change background to solid yellow */
+    color: #222; /* Change text color to dark for contrast */
+  }
+  
+.login-container {
+    display: flex;
+    align-items: center;
+}
+
+nav a.login {
+    /* background: rgba(255, 255, 255, 0.2);
+    color: white; */
+    font-weight: bold;
+    /* border-radius: 20px; */
+    font-size: 14px;
+}
+
+.user-icon {
+    font-size: 20px;
+    color: #FFC107;
+}

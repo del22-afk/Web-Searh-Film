@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <link rel="stylesheet" href="../css/admin.css"> <!-- Sesuaikan dengan path CSS kamu -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Tambahkan Font Awesome CDN -->
+</head>
+<body>
+  <main>
+    <div class="admin-dashboard">
+      <h1>Admin Dashboard</h1>
+
+      <!-- Daftar Pengguna dalam Bentuk Tabel -->
+      <section class="user-list">
+        <h2>Users</h2>
+        <table class="user-table">
+          <thead>
+            <tr>
+              <th>Username</th>
+              <th>Role</th>
+              <th>User ID</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% users.forEach(u => { %>
+              <tr>
+                <td><%= u.username %></td>
+                <td><%= u.role %></td>
+                <td><%= u._id %></td>
+                <td>
+                  <% if (u._id.toString() !== user._id.toString()) { %> 
+                    <form action="/admin/dashboard" method="POST" style="display:inline;">
+                      <input type="hidden" name="deleteUserId" value="<%= u._id %>">
+                      <button type="submit" onclick="return confirm('Yakin ingin menghapus user ini beserta komentarnya?')">
+                        <i class="fas fa-trash-alt"></i> Hapus
+                      </button>
+                    </form>
+                  <% } %>
+                </td>
+              </tr>
+            <% }) %>
+          </tbody>
+        </table>    
+      </section>
+
+      <!-- Daftar Komentar dalam Bentuk Tabel -->
+      <section class="comment-list">
+        <h2>Comment</h2>
+        <table class="comment-table">
+          <thead>
+            <tr>
+              <th>User</th>
+              <th>Comment</th>
+              <th>Time</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% comments.forEach(c => { %>
+              <tr>
+                <td><%= c.userId ? c.userId.username : '[Unknown User]' %></td>
+                <td><%= c.content %></td>
+                <td><%= new Date(c.createdAt).toLocaleString('id-ID') %></td>
+                <td>
+                  <form action="/admin/comment/<%= c._id %>/delete" method="POST" style="display:inline;" onsubmit="return confirm('Yakin ingin menghapus komentar ini?');">
+                    <button type="submit">
+                      <i class="fas fa-trash-alt"></i> Hapus
+                    </button>
+                  </form>
+                </td>
+              </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      </section>
+
+    </div>
+
+  <!-- Daftar Rating -->
+<section class="rating-list">
+  <h2>Ratings</h2>
+  <table class="rating-table">
+    <thead>
+      <tr>
+        <th>User</th>
+        <th>Movie</th>
+        <th>Rating</th>
+        <th>Time</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% ratings.forEach(r => { %>
+        <tr>
+          <td><%= r.user ? r.user.username : '[Unknown User]' %></td>
+          <td><%= r.movieTitle %></td>
+          <td><%= r.rating %> ⭐</td>
+          <td><%= new Date(r.createdAt).toLocaleString('id-ID') %></td>
+          <td>
+            <form action="/admin/rating/<%= r._id %>/delete" method="POST" style="display:inline;" onsubmit="return confirm('Yakin ingin menghapus rating ini?');">
+              <button type="submit">
+                <i class="fas fa-trash-alt"></i> Hapus
+              </button>
+            </form>
+          </td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+</section>
+
+  </main>
+</body>
+</html>
+

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | SearchMovies</title>
+    <link rel="stylesheet" href="/css/login.css">
+</head>
+<body>
+    <div class="container">
+        <div class="poster-grid">
+            <img src="https://thehill.com/wp-content/uploads/sites/2/2022/05/e92ed228a6924420a8963bdc6c9ddef1.jpg" alt="Poster 1">
+        </div>
+
+        <div class="login-box">
+            <h2>Log In to <br><span>Search<span class="highlight">Movies.</span></span></h2>
+            <% if(error != null && error != "" ) { %>
+                <p style="color: red;"><%= error %></p>
+            <% } %>
+            <form action="/login" method="POST">
+                <input type="text" name="username" placeholder="Username" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+            <p>Don't have an account yet? <a href="/signup">Create an account</a></p>
+        </div>
+    </div>
+</body>
+</html>

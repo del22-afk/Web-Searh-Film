@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favorites - SearchMovies</title>
+    <link rel="stylesheet" href="/css/home.css">  
+</head>
+<body>
+    <%- include('components/navbar') %>
+    <main>
+        <%- include('components/headerTitle') %>
+        <div class="movie-grid">
+            <% if (favoriteMovies.length > 0) { %> <!-- Ganti movies dengan favoriteMovies -->
+                <% favoriteMovies.forEach(movie => { %>
+                    <div class="movie-card">
+                        <img src="<%= movie.poster !== 'N/A' ? movie.poster : '/images/default-movie.jpg' %>" alt="Movie Poster">
+                        <div class="movie-info">
+                            <span class="rating">&#9733; <%= movie.rating || 'N/A' %></span>
+                            <h3>
+                                <a href="/movie/<%= movie.movieId || movie.imdbID %>"><%= movie.title %></a>
+                            </h3>
+                            
+                            <!-- Unfavorite Button -->
+                            <form action="/remove-favorite" method="POST">
+                                <input type="hidden" name="movieId" value="<%= movie.imdbID %>">
+                                <button type="submit" class="favorites-button">&#10006; Unfavorite</button>
+                            </form>
+                        </div>
+                    </div>
+                <% }) %>
+            <% } else { %>
+                <p>No favorite movies yet.</p>
+            <% } %>
+        </div>
+    </main>
+</body>
+</html>
